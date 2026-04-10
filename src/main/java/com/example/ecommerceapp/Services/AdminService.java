@@ -25,7 +25,7 @@ public class AdminService {
 		return adminRepo.findById(id).orElseThrow(()-> new RuntimeException("Admin with id"+ id +" not found"));
 		
 	}
-	public void createUser(Admin admin) {
+	public void createAdmin(Admin admin) {
 		adminRepo.save(admin);
 	}
 	

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.ecommerceapp.entity.Order;
+import com.example.ecommerceapp.entity.User;
 import com.example.ecommerceapp.repo.OrderRepo;
 
 @Service
@@ -26,6 +27,11 @@ public class OrderService {
 	
 	public void createOrder(Order Order) {
 		orderRepo.save(Order);
+	}
+	
+	public List<Order> findOrdersByUser(User user){
+		return orderRepo.findByUser(user);
+		
 	}
 	
 	public void updateOrder(Order Order) {

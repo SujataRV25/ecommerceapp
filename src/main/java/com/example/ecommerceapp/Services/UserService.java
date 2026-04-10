@@ -40,6 +40,10 @@ public class UserService {
 		
 	}
 	
+	public User findByEmail(String email) {
+		return userRepo.findByEmail(email);
+	}
+	
 	public boolean verifyCredentials(String email, String passward) {
 		
 		User user=userRepo.findByEmail(email);
