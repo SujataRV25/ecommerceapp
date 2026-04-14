@@ -18,17 +18,13 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@GetMapping("/add/user")
-	public String addUser() {
-		return "AddUser";
 	
-	}
 	
 	@PostMapping("/add/user")
 	public String addUser(User user) {
 		userService.createUser(user);
 		
-		return "Login";
+		return "LoginPage";
 	}
 	@GetMapping("/update/user/{id}")
 	public String updateUser(@PathVariable Long id, Model model) {
@@ -41,13 +37,13 @@ public class UserController {
 	@PostMapping("/update/user")
 	public String updateUser(User user) {
 		userService.updateUser(user);
-		return "/admin/home";
+		return "redirect:/admin/home";
 	}
 	
 	@DeleteMapping("delete/user/{id}")
 	public String deleteUser(@PathVariable Long id) {
 		userService.deleteUser(id);
-		return "/admin/home";
+		return "redirect:/admin/home";
 	}
 	
 	

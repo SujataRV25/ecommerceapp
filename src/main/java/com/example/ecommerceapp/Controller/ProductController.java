@@ -15,19 +15,13 @@ import com.example.ecommerceapp.entity.Product;
 public class ProductController {
 	
 	@Autowired
-	private ProductService productService;
-	
-	@GetMapping("/add/product")
-	public String addProduct() {
-		return "AddProduct";
-	}
-	
+	private ProductService productService; 
 	
 	@PostMapping("/add/product")
 	public String addProduct(Product product) {
 		productService.createProduct(product);
 		
-		return "/admin/home";
+		return "redirect:/admin/home";
 	}
 	
 	@GetMapping("/update/product/{id}")
@@ -41,13 +35,13 @@ public class ProductController {
 	@PostMapping("/update/product")
 	public String updateProduct(Product product) {
 		productService.updateProduct(product);
-		return "/admin/home";
+		return "redirect:/admin/home";
 	}
 	
 	@DeleteMapping("/delete/product/{id}")
 	public String deleteProduct(@PathVariable Long id) {
 		productService.deleteProduct(id);
-		return "/admin/home";
+		return "redirect:/admin/home";
 	}
 
 }

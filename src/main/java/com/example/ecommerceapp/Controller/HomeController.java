@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import com.example.ecommerceapp.Services.ProductService;
 import com.example.ecommerceapp.entity.Admin;
+import com.example.ecommerceapp.entity.Message;
 
 @Controller
 public class HomeController {
@@ -14,22 +15,23 @@ public class HomeController {
 	@Autowired
 	private ProductService productService;
 	
-	@GetMapping("/home")
+	@GetMapping({"/","/home"})
 	public String homePage() {
 		return "HomePage";
 		
 	}
 	
+	@GetMapping("/products")
 	public String productPage(Model model) {
 		model.addAttribute("productList",productService.getAllProducts());
 		
-		return "ProductPage";
-		
+		return "Products";
 	}
 	
-	@GetMapping("/contacts")
-	public String contactPage() {
-		return "ContactPage";
+	@GetMapping("/contactUs")
+	public String contactPage(Model model) {
+		model.addAttribute("message",new Message());
+		return "ContactUs";
 	}
 	
 	@GetMapping("/aboutUs")
@@ -41,7 +43,7 @@ public class HomeController {
 	@GetMapping("/login")
 	public String login(Model model) {
 		model.addAttribute("admin",new Admin());
-		return "Login";
+		return "LoginPage";
 		
 	}
 

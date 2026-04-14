@@ -7,18 +7,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="products")
-public class Product {
-
+@Table(name="messages")
+public class Message {
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
 	private String name;
 	
-	private double price;
+	private String email;
 	
-	private String description;
+	private String content;
 
 	public Long getId() {
 		return id;
@@ -36,24 +36,22 @@ public class Product {
 		this.name = name;
 	}
 
-	public double getPrice() {
-		return price;
+	public String getEmail() {
+		return email;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
-	public String getDescription() {
-		return description;
+	public String getContent() {
+		return content;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	public void setContent(String content) {
+		this.content = content;
 	}
 
 	
-	
-	
-	
+
 }

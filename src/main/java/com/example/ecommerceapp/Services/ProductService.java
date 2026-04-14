@@ -37,6 +37,7 @@ public class ProductService {
 	
 	public void deleteProduct(Long id) {
 		productRepo.findById(id).orElseThrow(()-> new RuntimeException("Product with id"+ id +" not found"));
+		productRepo.deleteById(id);
 		
 		
 	}

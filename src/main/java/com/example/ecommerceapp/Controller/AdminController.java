@@ -40,11 +40,14 @@ public class AdminController {
 	private User user;
 	
 	
-	@GetMapping("/verify/credentials")
+	@GetMapping("/admin/verify/credentials")
 	public String verifyCretentials(@ModelAttribute("admin") Admin admin, Model model) {
 		
 		if(adminService.verifyCredentials(admin.getEmail(), admin.getPassword())) {
-			return "";
+			model.addAttribute("admin",new Admin());
+			model.addAttribute("user",new User());
+			model.addAttribute("products",new Product());
+			return "redirect:/admin/home";
 		}
 		
 		model.addAttribute("error","Invalid email or password");
@@ -62,17 +65,11 @@ public class AdminController {
 		
 	}
 	
-	@GetMapping("/add/admin")
-	public String createAdmin() {
-		return "AddAdmin";
-		
-	}
-	
 	
 	@PostMapping("/add/admin")
 	public String createAdmin(Admin admin) {
 		adminService.createAdmin(admin);
-		return "/admin/home";
+		return "redirect:/admin/home";
 	}
 	
 	
@@ -87,7 +84,7 @@ public class AdminController {
 	@PostMapping("/update/admin")
 	public String updateAdmin(Admin admin) {
 		adminService.updateAdmin(admin);
-		return "/admin/home";
+		return "redirect:/admin/home";
 	}
 	
 	@GetMapping("/user/login")
@@ -101,7 +98,7 @@ public class AdminController {
 		}
 
 		model.addAttribute("error","Invalid email or password");
-		return "Login";
+		return "LoginPage";
 		
 	}
 	
