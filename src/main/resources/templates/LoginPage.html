@@ -45,7 +45,7 @@
 		<!-- Admin Login Section -->
 		<div class="col-md-6 d-flex flex-column justify-content-center align-items-center bg-light border-end">
 			<h2>Admin Login</h2>
-			<form class="w-75" th:action="@{/admin/verify/credentials}" th:object="${admin}">
+			<form class="w-75" th:action="@{/admin/verify/credentials}" th:object="${admin}" >
 				<div class="mb-3">
 					<label for="adminUsername" class="form-label">Username</label>
 					<input type="text" class="form-control" name="email" placeholder="Enter your username">
@@ -61,7 +61,7 @@
 		<!-- User Login Section -->
 		<div class="col-md-6 d-flex flex-column justify-content-center align-items-center bg-success text-white">
 			<h2>User Login</h2>
-			<form class="w-75" th:action="@{/user/login}" th:object="${user}" method="post">
+			<form class="w-75" th:action="@{/user/login}" th:object="${user}" method="post" >
 				<div class="mb-3">
 					<label for="userUsername" class="form-label">Username</label>
 					<input type="text" class="form-control" name="email" placeholder="Enter your username">

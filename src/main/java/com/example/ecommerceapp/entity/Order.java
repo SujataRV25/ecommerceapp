@@ -20,6 +20,8 @@ public class Order {
 	
 	private double price;
 	
+	private String name;
+	
 	private int quantity;
 	
 	private Date date;
@@ -36,6 +38,14 @@ public class Order {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+	
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public double getPrice() {

@@ -29,19 +29,21 @@ public class UserService {
 	}
 	
 	public void updateUser(User user) {
-		userRepo.findById(user.getId()).orElseThrow(()-> new RuntimeException("Admin with id"+ user.getId() +" not found"));
+		userRepo.findById(user.getId()).orElseThrow(()-> new RuntimeException("User with id"+ user.getId() +" not found"));
 		userRepo.save(user);
 		
 	}
 	
 	public void deleteUser(Long id) {
-		userRepo.findById(id).orElseThrow(()-> new RuntimeException("Admin with id"+ id +" not found"));
+		userRepo.findById(id).orElseThrow(()-> new RuntimeException("User with id"+ id +" not found"));
+		userRepo.deleteById(id);
 		
 		
 	}
 	
 	public User findByEmail(String email) {
 		return userRepo.findByEmail(email);
+		
 	}
 	
 	public boolean verifyCredentials(String email, String passward) {

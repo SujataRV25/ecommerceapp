@@ -38,7 +38,7 @@ public class ProductController {
 		return "redirect:/admin/home";
 	}
 	
-	@DeleteMapping("/delete/product/{id}")
+	@GetMapping("/delete/product/{id}")
 	public String deleteProduct(@PathVariable Long id) {
 		productService.deleteProduct(id);
 		return "redirect:/admin/home";

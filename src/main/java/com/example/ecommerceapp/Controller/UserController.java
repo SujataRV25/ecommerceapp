@@ -24,11 +24,12 @@ public class UserController {
 	public String addUser(User user) {
 		userService.createUser(user);
 		
-		return "LoginPage";
+		return "redirect:/admin/home";
 	}
+	
 	@GetMapping("/update/user/{id}")
 	public String updateUser(@PathVariable Long id, Model model) {
-		model.addAttribute("admin", userService.getById(id));
+		model.addAttribute("user", userService.getById(id));
 		
 		return "UpdateUser";
 		
@@ -40,7 +41,7 @@ public class UserController {
 		return "redirect:/admin/home";
 	}
 	
-	@DeleteMapping("delete/user/{id}")
+	@GetMapping("delete/user/{id}")
 	public String deleteUser(@PathVariable Long id) {
 		userService.deleteUser(id);
 		return "redirect:/admin/home";

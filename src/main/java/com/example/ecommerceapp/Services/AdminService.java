@@ -1,4 +1,4 @@
-package com.example.ecommerceapp.Services;
+	package com.example.ecommerceapp.Services;
 
 import java.util.List;
 
@@ -38,6 +38,7 @@ public class AdminService {
 	
 	public void deleteAdmin(Long id) {
 		adminRepo.findById(id).orElseThrow(()-> new RuntimeException("Admin with id"+ id +" not found"));
+		adminRepo.deleteById(id);
 		
 		
 	}
