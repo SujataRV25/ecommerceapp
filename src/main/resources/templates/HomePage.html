@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
+	<title>Home</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+	<style>
+	.card {
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-<title>Home</title>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+.card:hover {
+transform: translateY(-5px);
+box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
 
+
+	</style>
 </head>
-
 <body>
-	<body>
 	<nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
 		<div class="container-fluid">
 			<a class="navbar-brand me-5" th:href="@{/}">Ecommerce App</a>
@@ -36,7 +44,104 @@
 			</div>
 		</div>
 	</nav>
+	
+<!-- Hero Section -->
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5 text-center">
+        <h1 class="display-5 fw-bold">Welcome to Ecommerce App</h1>
+        <p class="col-md-8 fs-4 mx-auto">
+            Discover amazing products at unbeatable prices.
+        </p>
+        <a th:href="@{/products}" class="btn btn-primary btn-lg">
+            Shop Now
+        </a>
+    </div>
+</div>
+
+<!-- Featured Products -->
+<h2 class="mb-4">Featured Products</h2>
+
+<div class="row">
+
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img th:src="@{/Images/camera1.jpg}" class="card-img-top">
+           
+            <div class="card-body">
+                <h5 class="card-title">Camera</h5>
+                <p class="card-text">a type of digital camera that combines a digital sensor with a mechanical mirror system and pentaprism to provide an optical view of a subject through the lens.</p>
+                <a href="#" class="btn btn-primary">View</a>
+            </div>
+             </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img th:src="@{/Images/headphone.png}" class="card-img-top">
+            
+            <div class="card-body">
+                <h5 class="card-title">Headphone</h5>
+                <p class="card-text">Wireless Noise-Cancelling (Over-Ear), True Wireless Earbuds,Audiophile & Studio Wired:</p>
+                <a href="#" class="btn btn-primary">View</a>
+            </div>
+            </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img th:src="@{/Images/laptop.jpg}" class="card-img-top">
+        
+            <div class="card-body">
+                <h5 class="card-title">Mac Laptop</h5>
+                <p class="card-text">MacBook Air and MacBook Pro, which are now powered by the M5 chip series.</p>
+                <a href="#" class="btn btn-primary">View</a>
+        </div>
+            </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card">
+            <img th:src="@{/Images/mobile1.jpg}" class="card-img-top">
+            
+            <div class="card-body">
+                <h5 class="card-title">Mobiles</h5>
+                <p class="card-text">Key flagship releases include the Samsung Galaxy S26 Ultra, Google Pixel 10, and OnePlus 15</p>
+                <a href="#" class="btn btn-primary">View</a>
+            </div>
+        </div>
+    </div>
+
+
+<div class="col-md-4 mb-4">
+        <div class="card">
+            <img th:src="@{/Images/keyboard.webp}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">Keyboard</h5>
+                <p class="card-text">a primary input device used to type text, numbers, and commands into computers and other electronic devices</p>
+                <a href="#" class="btn btn-primary">View</a>
+            </div>
+        </div>
+    </div>
+
+
+<div class="col-md-3 mb-3">
+        <div class="card">
+            <img th:src="@{/Images/table.png}" class="card-img-top">
+           
+            <div class="card-body">
+                <h5 class="card-title">Study Chair Table</h5>
+                <p class="card-text">long-term ergonomic support, a minimalist aesthetic, or a compact design for smaller spaces.</p>
+                <a href="#" class="btn btn-primary">View</a>
+            </div>
+        </div>
+     </div>
+</div>
+
+
+
+
+
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
-</html>	
+</html>
